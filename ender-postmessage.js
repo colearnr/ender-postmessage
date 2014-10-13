@@ -1,6 +1,6 @@
 /*
- * ender postMessage - v0.1.3 - 5/1/2012
- * by Thomas Sturm http://www.sturm.to
+ * ender postMessage - v0.1.4 - 13/10/2014
+ * by Prabhu Subramanian http://www.colearnr.com
  * Dual licensed under the MIT and GPL licenses.
  *
  * based on 
@@ -14,6 +14,8 @@
 
 // Release History
 // ender postMessage
+// Version: 0.1.4, Last updated: 13/10/2014 
+// Based on Thomas Sturm's fork. Made this a pure jQuery plugin without adopting browserify.
 // 0.1.3 - (5/1/2012) compatible with browserify
 // 0.1.2 - (5/26/2011) Initial Fork and Release
 //

@@ -1,5 +1,9 @@
 # ender-postMessage: Cross-Domain Messaging #
 
+Version: 0.1.4, Last updated: 13/10/2014
+
+Based on Thomas Sturm's fork. Made this a pure jQuery plugin without adopting browserify.
+
 Version: 0.1.3, Last updated: 5/1/2012
 
 Based on Ben Alman's jQuery-postMessage [http://benalman.com/projects/jquery-postmessage-plugin/](http://benalman.com/projects/jquery-postmessage-plugin/)
