@@ -40,6 +40,9 @@
 	  addEventListener = 'addEventListener',
 
       has_postMessage = window[postMessage];
+      
+      // check for nodeJS
+      hasModule = (typeof module !== 'undefined' && module.exports && typeof require !== 'undefined'),
      
       fn = {};
 	
@@ -196,5 +199,7 @@
 		  }
 		}
 	  };
-	  module.exports = {postMessage: fn.postMessage, receiveMessage: fn.receiveMessage};
+	  if (hasModule) {
+	    module.exports = {postMessage: fn.postMessage, receiveMessage: fn.receiveMessage};
+	  }
 }(window);
