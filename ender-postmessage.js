@@ -21,7 +21,7 @@
 // 0.5 - (9/11/2009) Improved cache-busting
 // 0.4 - (8/25/2009) Initial release
 
-!function (window) {
+!function ($, window) {
      // A few vars used in non-awesome browsers
      var interval_id,
 	  last_hash,
@@ -41,12 +41,7 @@
 
       has_postMessage = window[postMessage];
       
-      // check for nodeJS
-      hasModule = (typeof module !== 'undefined' && module.exports && typeof require !== 'undefined'),
-     
-      fn = {};
-	
-	  // Method: ender.postMessage
+	  // Method: $.postMessage
 	  // 
 	  // This method will call window.postMessage if available, setting the
 	  // targetOrigin parameter to the base of the target_url parameter for maximum
@@ -58,7 +53,7 @@
 	  // 
 	  // Usage:
 	  // 
-	  // > ender.postMessage( message, target_url [, target ] );
+	  // > $.postMessage( message, target_url [, target ] );
 	  // 
 	  // Arguments:
 	  // 
@@ -74,7 +69,7 @@
 	  // 
 	  //  Nothing.
 	  
-	  fn.postMessage = function( message, target_url, target ) {
+	  $.postMessage = function( message, target_url, target ) {
 		if ( !target_url ) { return; }
 		
 		// Default to parent if unspecified.
@@ -94,7 +89,7 @@
 		}
 	  };
 	  
-	  // Method: ender.receiveMessage
+	  // Method: $.receiveMessage
 	  // 
 	  // Register a single callback for either a window.postMessage call, if
 	  // supported, or if unsupported, for any change in the current window
@@ -119,7 +114,7 @@
 	  // 
 	  // Usage:
 	  // 
-	  // > ender.receiveMessage( callback [, source_origin ] [, delay ] );
+	  // > $.receiveMessage( callback [, source_origin ] [, delay ] );
 	  // 
 	  // Arguments:
 	  // 
@@ -141,7 +136,7 @@
 	  // 
 	  //  Nothing!
 	  
-	  fn.receiveMessage = function( callback, source_origin, delay ) {
+	  $.receiveMessage = function( callback, source_origin, delay ) {
 		if ( has_postMessage ) {
 		  // Since the browser supports window.postMessage, the callback will be
 		  // bound to the actual event associated with window.postMessage.
@@ -199,7 +194,4 @@
 		  }
 		}
 	  };
-	  if (hasModule) {
-	    module.exports = {postMessage: fn.postMessage, receiveMessage: fn.receiveMessage};
-	  }
-}(window);
+}(jQuery, window);
