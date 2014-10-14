@@ -145,7 +145,7 @@
 		  
 		  if ( callback ) {
 			// Unbind an existing callback if it exists.
-			rm_callback && fn.receiveMessage();
+			rm_callback && $.receiveMessage();
 			
 			// Bind the callback. A reference to the callback is stored for ease of
 			// unbinding.
